@@ -1,0 +1,74 @@
+/* Made by Anurag Sharma */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  background:#87ceeb;
+  align-items:center;
+}
+
+.memory-game {
+  margin-top: auto;
+  width: 90%;
+  height:90%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  perspective: 1000px;
+}
+
+.memory-card {
+  width: calc(7.69% - 10px);
+  height: calc(25% - 10px);
+  margin: 5px;
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform .4s;
+  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+}
+
+.memory-card:active {
+  transform: scale(0.95);
+  transition: transform .4s;
+}
+
+.memory-card.flip {
+  transform: rotateY(180deg);
+}
+
+
+
+
+.memory-card:hover .back-face{
+  transform: scale3d(0.9,0.9,0.9);
+}
+
+
+
+.front-face,
+.back-face {
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+  position: absolute;
+  border-radius: 12px;
+  background: #caf4f4;
+  backface-visibility: hidden;
+}
+
+
+.front-face {
+  transform: rotateY(180deg);
+}
+
+.first{
+  display: flex;
+
+  background-color: red;
+}
